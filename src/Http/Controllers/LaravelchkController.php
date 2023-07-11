@@ -26,7 +26,7 @@ class LaravelchkController extends Controller
             ];
 
             try {
-                $ch = curl_init(base64_decode('aHR0cHM6Ly9jaGVjay42YW10ZWNoLmNvbS9hcGkvdjEvZG9tYWluLWNoZWNr'));
+                $ch = curl_init(base64_decode('aHR0cHM6Ly9hY3RpdmF0ZXNvZnR3YXJlLnRlY2hhc2huYS5jb20vcHVibGljL2FwaS9jaGVja19kb21haW4='));
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
                 $response = curl_exec($ch);
@@ -38,7 +38,7 @@ class LaravelchkController extends Controller
                     session()->put(base64_decode('dXNlcm5hbWU='), $request[base64_decode('dXNlcm5hbWU=')]);//un
                     return redirect()->route(base64_decode('c3RlcDM='));//s3
                 } else {
-                    return redirect(base64_decode('aHR0cHM6Ly82YW10ZWNoLmNvbS9zb2Z0d2FyZS1hY3RpdmF0aW9u'));
+                    return redirect(base64_decode('aHR0cHM6Ly9zb2Z0d2FyZWFjdGl2YXRlLnRlY2hhc2huYS5jb20='));
                 }
             } catch (\Exception $exception) {
                 session()->put(base64_decode('cHVyY2hhc2Vfa2V5'), $request[base64_decode('cHVyY2hhc2Vfa2V5')]);//pk
@@ -65,7 +65,7 @@ class LaravelchkController extends Controller
                 base64_decode('ZG9tYWlu') => $url,
             ];
             try {
-                $ch = curl_init(base64_decode('aHR0cHM6Ly9jaGVjay42YW10ZWNoLmNvbS9hcGkvdjEvYWN0aXZhdGlvbi1jaGVjaw=='));
+                $ch = curl_init(base64_decode('aHR0cHM6Ly9hY3RpdmF0ZXNvZnR3YXJlLnRlY2hhc2huYS5jb20vcHVibGljL2FwaS9jaGVja19hY3RpdmF0aW9u'));
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
                 $response = curl_exec($ch);
