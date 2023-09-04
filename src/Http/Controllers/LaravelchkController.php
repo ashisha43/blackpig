@@ -21,7 +21,7 @@ class LaravelchkController extends Controller
             $post = [
                 base64_decode('dXNlcm5hbWU=') => $request[base64_decode('dXNlcm5hbWU=')],//un
                 base64_decode('cHVyY2hhc2Vfa2V5') => $request[base64_decode('cHVyY2hhc2Vfa2V5')],//pk
-                base64_decode('c29mdHdhcmVfaWQ=') => base64_decode(env(base64_decode('U09GVFdBUkVfSUQ='))),//sid
+                base64_decode('c29mdHdhcmVfaWQ=') => env(base64_decode('U09GVFdBUkVfSUQ=')),//sid
                 base64_decode('ZG9tYWlu') => $url
             ];
 
@@ -33,7 +33,8 @@ class LaravelchkController extends Controller
                 //$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
                 curl_close($ch);
 
-                if (isset(json_decode($response, true)['active']) && base64_decode(json_decode($response, true)['active'])) {
+                if (isset(json_decode($response, true)['active']) && base64_decode(json_decode($response, true)['active'])) 
+                {
                     session()->put(base64_decode('cHVyY2hhc2Vfa2V5'), $request[base64_decode('cHVyY2hhc2Vfa2V5')]);//pk
                     session()->put(base64_decode('dXNlcm5hbWU='), $request[base64_decode('dXNlcm5hbWU=')]);//un
                     return redirect()->route(base64_decode('c3RlcDM='));//s3
@@ -61,7 +62,7 @@ class LaravelchkController extends Controller
             $post = [
                 base64_decode('dXNlcm5hbWU=') => env(base64_decode('QlVZRVJfVVNFUk5BTUU=')),//un
                 base64_decode('cHVyY2hhc2Vfa2V5') => env(base64_decode('UFVSQ0hBU0VfQ09ERQ==')),//pk
-                base64_decode('c29mdHdhcmVfaWQ=') => base64_decode(env(base64_decode('U09GVFdBUkVfSUQ='))),//sid
+                base64_decode('c29mdHdhcmVfaWQ=') => env(base64_decode('U09GVFdBUkVfSUQ=')),//sid
                 base64_decode('ZG9tYWlu') => $url,
             ];
             try {
