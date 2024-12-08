@@ -1,32 +1,16 @@
 {
+   
     "name": "blackpig/blackpig",
-    "description": "A custom Laravel package for [describe purpose here]",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
-        "php": ">=8.0", 
-        "laravel/framework": "^9.0|^10.0", 
         "ext-curl": "*",
-        "ext-json": "*"
+      "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "BlackPig\\BlackPig\\": "src/"
+            "Laravelpkg\\Laravelchk\\": "src/"
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "BlackPig\\BlackPig\\BlackPigServiceProvider"
-            ]
-        }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.0" 
-    },
-    "scripts": {
-        "test": "phpunit"
     }
 }
