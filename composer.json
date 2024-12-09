@@ -1,16 +1,22 @@
 {
-   
     "name": "blackpig/blackpig",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
         "ext-curl": "*",
-      "ext-json": "*"
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "Laravelpkg\\Laravelchk\\": "src/"
+            "BlackPig\\BlackPig\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BlackPig\\BlackPig\\BlackPigServiceProvider"
+            ]
         }
     }
 }
