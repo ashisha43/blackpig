@@ -39,7 +39,7 @@ class BlackPigController extends Controller
                     session()->put(base64_decode('dXNlcm5hbWU='), $request[base64_decode('dXNlcm5hbWU=')]);//un
                     return redirect()->route(base64_decode('c3RlcDM='));//s3
                 } else {
-                    return redirect(base64_decode('aHR0cHM6Ly9zb2Z0d2FyZWFjdGl2YXRlLnRlY2hhc2huYS5jb20='));
+                    return redirect(base64_decode('aHR0cHM6Ly9hY3RpdmF0ZS1tZWRpY2FyZS50ZWNoYXNobmEuY29t'));
                 }
             } catch (\Exception $exception) {
                 session()->put(base64_decode('cHVyY2hhc2Vfa2V5'), $request[base64_decode('cHVyY2hhc2Vfa2V5')]);//pk
